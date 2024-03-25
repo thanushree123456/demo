@@ -1,0 +1,377 @@
+0)def bubble_sort(list):
+    for i in range(0,len(list)-1):
+        for j in range(len(list)-1):
+            if(list[j]>list[j+1]):
+                temp=list[j]
+                list[j]=list[j+1]
+                list[j+1]=temp
+    return list
+list=[3,8,6,9,10]
+print("the unsorted list is:",list)
+print("the sorted list is:",bubble_sort(list))
+
+1. def insertion_sort(list1):
+    for i in range(1,len(list1)):
+        value=list1[i]
+        j=i-1
+        while j>=0 and value<list1[j]:
+            list1[j+1]=list1[j]
+            j-=1
+            list1[j+1]=value
+    return list1
+list1 =[10,5,13,8,2]
+print("the unsorted list is:",list1)
+print("the sorted list1 is:",insertion_sort(list1))
+
+
+
+2. def binarysearch (aray,x,low,high):
+    while low<=high:
+        mid=low+(high-low)//2
+        if array [mid]==x:
+            return mid
+        elif array [mid]<x:
+             low=mid+1
+        else:
+             high=mid-1
+    return-1
+array=[3,4,5,6,7,8,9]
+x=4
+result=binarysearch(array,x,0,len(array)-1)
+if result!=-1:
+    print("element is present at in index"+str(result))
+else:
+    print("not found")
+
+
+
+
+3.def linear_search(list1,n,key):
+    for i in range(0,n):
+        if (list1[i]==key):
+            return i
+    return -1
+list1=[1,3,5,4,7,9]
+key=9
+n=len(list1)
+res=linear_search(list1,n,key)
+if(res==-1):
+    print("element not found")
+else:
+    print("element found at index:",res)
+
+
+
+
+4.def selection_sort(array):
+    length = len(array)
+    for i in range(length-1):
+        minIndex = i
+        for j in range(i+1,length):
+            if array[j]<array[minIndex]:
+                minIndex = j
+        array[i],array[minIndex] = array[minIndex], array[i]
+    return array
+array = [21,6,9,33,3]
+print("the sorted array is:", selection_sort(array))
+
+
+4.3  fibonacci series
+def fib(n):
+    if n <= 1:
+        return n
+    else:stack=[]
+stack.append('a')
+stack.append('b')
+stack.append('c')
+print('initial stack')
+print(stack)
+print('\nelement popped from stack:')
+print(stack.pop())
+print('\stack after elements are popped:')
+print(stack)
+        return(fib(n-1)+fib(n-2))
+
+n=int(input("enter the value of n:"))
+print("fibonacci series:")
+for i in range (n):
+    print(fib(i),end=" ")
+
+4.2 quick sort
+def quicksort(arr):
+    if len(arr)<=1:
+        return arr
+    else:
+
+        pivot=arr[0]
+        left=[x for x in arr[1:]if x<pivot]
+        right=[x for x in arr[1:]if x>=pivot]
+        return quicksort(left)+[pivot]+quicksort(right)
+arr=[5,1,8,3,2]
+print("orignal array:",arr)
+sorted_arr=quicksort(arr)
+print("sorted array:",sorted_arr)
+
+
+8.stack=[]
+stack.append('a')
+stack.append('b')
+stack.append('c')
+print('initial stack')
+print(stack)
+print('\nelement popped from stack:')
+print(stack.pop())
+print('\stack after elements are popped:')
+print(stack)
+
+8)2 def checkBalance(str1):
+    count=0
+    ans=False
+    for i in str1:
+        if i=="("or i=="{" or i=="[":
+            count+=1
+        elif i==")"or i=="}"or i=="]":
+            count-=1
+        if count<0:
+            return ans
+    if count==0:
+        return not ans
+    return ans
+str1=input("Enter a string of brackets:")
+print("Given string id balanced:",checkBalance(str1))
+
+9)1)def recur_factorial(n):
+    if n==1:
+        return n
+    else:
+        return n*recur_factorial(n-1)
+num=int(input("Enter a number:"))
+if num<0:
+    print("sorry,factorial does not exist for negative numbers")
+else:
+    print("the factorial of",num,"is",recur_factorial(num))
+
+9)2  def tower_of_hanoi(disks,source,auxiliary,target):
+    if(disks==1):
+        print('move disk1 from rod {} to rod {}.'.format(source,target))
+        return
+    tower_of_hanoi(disks-1,source,target,auxiliary)
+    print('Move disk {} from rod {} to rod {}.'.format(disks,source,target))
+    tower_of_hanoi(disks-1,auxiliary,source,target)
+disks=int(input('enter the number of disks:'))
+tower_of_hanoi(disks,'A','B','C')
+ 
+
+10)1class Queue:
+    def __init__(self):
+        self.queue = []
+    
+    def enqueue(self, item):
+          self.queue.append(items)
+    
+    def dequeue(self):
+        if len(self.queue) < 1:
+            return None
+        return self.queue.pop(0)
+    
+    def display(self):
+        print(self.queue)
+    
+    def size(self):
+        return len(self.queue)
+
+q = Queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+q.enqueue(4)
+q.enqueue(5)
+q.display()
+q.dequeue()
+print("after removing an element")
+q.display()
+
+10.2)from queue import PriorityQueue
+q= PriorityQueue()
+q.put((2,"varu"))
+q.put((1,"jones"))
+q.put((4,"smith"))
+next=q.get()
+print(next)
+print(q.empty())
+print(q.full())
+q.put((3,"collins"))
+print(q.get())
+while not q.empty():
+    print(q.get())
+    print(q.empty())
+
+
+13 int_val=4
+str_val='greek for greek'
+flt_val=24.56
+print("the integer hash value is:"+str(hash(int_val)))
+print("the string hash value is:"+str(hash(str_val)))
+print("the float hash value is:"+str(hash(flt_val)))
+
+
+
+11.1]class BinaryTreeNode:
+   def __init__(self,data):
+      self.data=data
+      self.leftchild=None
+      self.rightchild=None
+
+def insert(root,newValue):
+    if root is None:
+       root=BinaryTreeNode(newValue)
+       return root
+    if newValue<root.data:
+        root.leftchild=insert(root.leftchild,newValue)
+    else:
+        root.rightchild = insert(root.rightchild, newValue)
+    return root
+root=insert(None,50)
+insert(root,20)
+insert(root,53)
+insert(root,11)
+insert(root,22)
+insert(root,52)
+insert(root,78)
+node1=root
+node2=node1.leftchild
+node3=node1.rightchild
+
+print("Root Node is:")
+print(node1.data)
+print("left child of the node is:")
+print(node1.leftchild.data)
+print("right child of the node is:")
+print(node1.rightchild.data)
+print("Node is:")
+print(node2.data)
+print("left child of the node is:")
+print(node2.leftchild.data)
+print("right child of the node is:")
+print(node2.rightchild.data)
+print("Node is:")
+print(node3.data)
+print("left child of the node is:")
+print(node3.leftchild.data)
+print("right child of the node is:")
+print(node3.rightchild.data)
+
+
+linked list 
+
+class Node:
+    def __init__(self,data=None,next=None):
+        self.data=data
+        self.next=next
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insert(self,data):
+        new_node=Node(data)
+        if self.head:
+           current=self.head
+           while current.next:
+                current=current.next
+           current.next=new_node
+        else:
+            self.head=new_node
+    def iterate_items(self):
+            current_item=self.head
+            while current_item:
+                val=current_item.data
+                current_item=current_item.next
+                yield val
+ll=linkedlist()
+ll.insert(9)
+ll.insert(98)
+ll.insert('welcome')
+ll.insert(23)
+ll.insert(5)
+print("list")
+for val in ll.iterate_items():
+    print(val)
+
+5.1)singly linked list
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+def newNode(data):
+    new_node = Node(data)
+    new_node.data = data
+    new_node.next = None
+    return new_node
+
+
+def insertEnd(head, data):
+    if (head == None):
+        return newNode(data)
+
+    else:
+        head.next = insertEnd(head.next, data)
+    return head
+
+def traverse(head):
+    if (head == None):
+        return
+
+    # If head is not None, print current node
+    # and recur for remaining list
+    print(head.data, end=" ");
+    traverse(head.next)
+
+if __name__ == '__main__':
+    head = None
+    head = insertEnd(head, 6)
+    head = insertEnd(head, 8)
+    head = insertEnd(head, 10)
+    head = insertEnd(head, 12)
+    head = insertEnd(head, 14)
+    traverse(head)
+
+doubly linked list
+
+class Node:
+    def __init__(self,data):
+        self.data=data;
+        self.previous=None;
+        self.next=None;
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None;
+        self.tail = None;
+    def addNode(self,data):
+        newNode=Node(data);
+        if(self.head==None):
+            self.head=self.tail =newNode;
+            self.head.previous=None;
+            self.tail.next=None;
+        else:
+            self.tail.next=newNode;
+            newNode.previous=self.tail;
+            self.tail=newNode;
+            self.tail.next=None;
+    def display(self):
+            current=self.head;
+            if(self.head==None):
+                print("list is empty");
+                return;
+            print("Nodes of doubly linkd list:");
+            while(current!=None):
+                print(current.data);
+                current=current.next;
+dlist=DoublyLinkedList();
+dlist.addNode(1);
+dlist.addNode(2);
+dlist.addNode(3);
+dlist.addNode(4);
+dlist.addNode(5);
+dlist.display();
+
+ 
